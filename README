@@ -16,9 +16,20 @@ source ~/.profile
 (sbt finnes i macports for eksempel, men bare i en litt for gammel versjon. Før du installerer via pakkesystem så
  forsikre deg om at du får 0.11.2 )
 
+
 --- enkel bruk ---
 
 for å bygge og kjøre dette eksempelprosjektet kan du skrive: sbt run
 
-for å generere intellij-prosjektfiler: sbt gen-idea
+for å generere IntelliJ-prosjektfiler: sbt gen-idea
 
+
+--- Plugin til IntelliJ ---
+
+Denne må installeres i IntelliJ via Preferences->Plugins->søk etter Scala
+
+
+--- Lekeprosjekt - til inspirasjon ---
+
+Minimal sudoku-webapp på under 150 linjer
+https://github.com/teigen/shoot
