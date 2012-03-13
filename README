@@ -1,0 +1,24 @@
+
+--- Oppsett av sbt ---
+
+Oppsett av sbt er en ganske manuell affære foreløpig. Det trengs en jar-fil, og å legge et script som starter den
+ et eller annet sted i $PATH . Presise instruksjoner finnes på https://github.com/harrah/xsbt/wiki/Getting-Started-Setup
+
+Essensen er ca følgende kommandoer:
+
+mkdir ~/bin
+curl "http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/0.11.2/sbt-launch.jar" -o ~/bin/sbt-launch-0.11.2.jar
+echo 'java -Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar `dirname $0`/sbt-launch-0.11.2.jar "$@"'>~/bin/sbt
+chmod +x ~/bin/sbt
+echo "export PATH=~/bin:\$PATH">>~/.profile
+source ~/.profile
+
+(sbt finnes i macports for eksempel, men bare i en litt for gammel versjon. Før du installerer via pakkesystem så
+ forsikre deg om at du får 0.11.2 )
+
+--- enkel bruk ---
+
+for å bygge og kjøre dette eksempelprosjektet kan du skrive: sbt run
+
+for å generere intellij-prosjektfiler: sbt gen-idea
+
